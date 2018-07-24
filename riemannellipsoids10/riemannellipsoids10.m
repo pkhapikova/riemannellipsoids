@@ -45,6 +45,10 @@ y0 = matrixToVector(sigma,M);
 options = odeset('RelTol',1e-12,'AbsTol',1e-10);
 [t,y] = ode45(@(t,y)riemann(t,y,G,rho,volume), tspan, y0, options);  
 
+%save data
+filename = "a" + string(a) + "_w1=" + string(w1) + "_w2=" + string(w2) + "_w3=" + string(w3)+ ".mat";
+save(filename, 't', 'y')
+
 %set variables for later use
 size_y = size(y);
 length_y = size_y(1,1);
