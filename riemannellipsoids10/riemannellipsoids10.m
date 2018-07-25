@@ -69,6 +69,9 @@ title('y')
 %calculate and graph volume
 [Vol, fc] = volume_calc(length_y,t,at,bt,ct,fc);
 
+%%plot axes
+fc = plot_axes(t,at,bt,ct,fc);
+
 %% Gamma_squared
 %calculate and graph gamma_squared
 fc = gamma_calc(length_y,t, Mf, sigmaf, fc);
